@@ -13,9 +13,24 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jsforce": "^1.9.1",
-    "request": "^2.88.0"
+    "path": "^0.12.7",
+    "request": "^2.88.0",
+    "serve-favicon": "^2.5.0"
   },
   "engines": {
-    "node":"v8.12.0"
+    "node": "v8.12.0"
+  },
+  "devDependencies": {
+    "@google-cloud/nodejs-repo-tools": "^2.3.0",
+    "semistandard": "^12.0.1"
+  },
+  "cloud-repo-tools": {
+    "test": {
+      "app": {
+        "msg": "Hello, world!"
+      }
+    },
+    "requiresKeyFile": true,
+    "requiresProjectId": true
   }
 }

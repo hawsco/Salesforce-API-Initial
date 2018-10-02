@@ -1,6 +1,9 @@
 var express = require('express');
 var bodyParser = require('body-parser'); 
 
+var favicon = require('serve-favicon');
+var path = require('path');
+
 var sfData = require('./Salesforce/data');
 
 var app = express();
@@ -8,6 +11,7 @@ var app = express();
 const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
+app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
 
 app.get('/',(req,res)=>{
 
