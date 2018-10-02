@@ -9,6 +9,12 @@ const port = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 
+app.get('/',(req,res)=>{
+
+  res.send('<h1>Salesforce API!!! </h1>')
+
+});
+
 app.get('/data/:type', (req, res) => {
 
 
