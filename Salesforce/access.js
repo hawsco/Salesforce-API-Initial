@@ -14,7 +14,9 @@ var conn = new jsforce.Connection({
 
   var getToken = (callback)=>{
 
-  conn.login('systems@hawsco.com.iot', 'SF18r3s3t', function (err, userInfo) {
+    var securityToken = 'JDmYHNZGLnsTocy1MtePvltqB';
+
+  conn.login('systems@hawsco.com.iot', 'SF18r3s3t'+securityToken, function (err, userInfo) {
     if (err) { 
       
       console.log(err);
