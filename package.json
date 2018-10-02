@@ -1,0 +1,17 @@
+{
+  "name": "Salesforce Initial App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Monika Ravi",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "jsforce": "^1.9.1",
+    "request": "^2.88.0"
+  }
+}
