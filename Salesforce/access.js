@@ -16,6 +16,8 @@ var conn = new jsforce.Connection({
   conn.login('systems@hawsco.com.iot', 'SF18r3s3t', function (err, userInfo) {
     if (err) { 
       
+      console.log(err);
+
       callback(err); 
     
     } else if (conn.accessToken){
