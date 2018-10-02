@@ -20,6 +20,8 @@ var conn = new jsforce.Connection({
     
     } else if (conn.accessToken){
 
+      console.log(conn.accessToken);
+
       callback(undefined, {
 
         accToken: conn.accessToken,
