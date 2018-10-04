@@ -1,8 +1,10 @@
 var express = require('express');
-var bodyParser = require('body-parser'); 
+var bodyParser = require('body-parser');
 
 var favicon = require('serve-favicon');
 var path = require('path');
+
+var viewPath = __dirname + '/public/';
 
 var sfData = require('./Salesforce/Query/accounts');
 var sfQuery = require('./Salesforce/Query/opportunity');
@@ -14,13 +16,12 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
 
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
 
-  res.send('<h1>Salesforce API!!! </h1>')
-
-  
+  res.sendFile(viewPath + "home.html");
 
 });
+
 
 // get Accounts by distributor type
 
@@ -29,48 +30,48 @@ app.get('/data/:type', (req, res) => {
 
   sfData.accounts(req.params.type).then(
 
-    (data)=>{
+    (data) => {
 
-      res.send(JSON.stringify(data,undefined,2));
-     // console.log({data});
+      res.send(JSON.stringify(data, undefined, 2));
+      // console.log({data});
     },
-    (err)=>{
+    (err) => {
       res.status(400).send(err);
     }
 
-  ).catch((err)=>{
+  ).catch((err) => {
     res.status(400).send(err);
   })
 
 
- });
+});
 
- // get the opportunity by AX account no
+// get the opportunity by AX account no
 
- app.get('/opportunity/:account', (req, res) => {
+app.get('/opportunity/:account', (req, res) => {
 
- 
+
   sfQuery.querySoql(decodeURI(req.params.account)).then(
 
-    (data)=>{
+    (data) => {
 
-      res.send(JSON.stringify(data,undefined,2));
-     // console.log({data});
+      res.send(JSON.stringify(data, undefined, 2));
+      // console.log({data});
     },
-    (err)=>{
+    (err) => {
       res.status(400).send(err);
     }
 
-  ).catch((err)=>{
+  ).catch((err) => {
     res.status(400).send(err);
   })
 
 
- });
+});
 
 
 
- app.listen(port, () => {
+app.listen(port, () => {
   console.log(`Server started at port ${port}..`);
 });
 

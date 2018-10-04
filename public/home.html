@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Single page web app using Angularjs</title>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: left;
+            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+            color: rgb(66, 69, 86);
+            font-weight: 100;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div>
+        <div>
+            <nav class="navbar navbar-inverse" role="navigation" style="padding-left:10px;">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+                    <li><a style="font: bold;" href="https://github.com/hawsco/Salesforce-API-Initial.git" onclick="location.href='/';"
+                            target="_blank">
+                            GitHub
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+        <br />
+        <div style="padding-left:50px">
+            <h1>API</h1>
+
+            <h3>/data/:accountId</h3>
+
+            <h5>returns Distributor Detail by Distributor Type</h5>
+
+            <h6><u>JSON Structure</u></h6>
+
+            <code style="display:block;white-space:pre-wrap">
+                        { 
+                            "attributes": {
+                            "type": "Account",
+                            "url": "/services/data/v43.0/sobjects/Account/:AccountId"
+                            },
+                            "Id": AccountID,
+                            "Name": Account Name,
+                            "Type": Distributor Type,
+                            "Phone": Contact Number,
+                            "Website": Distributor website
+                        }
+                    </code>
+
+
+            <h3>/opportunity/:AxCustomerId</h3>
+
+            <h5>returns Opportunity by AX Account Number</h5>
+
+            <h6><u>JSON Structure</u></h6>
+
+            <code style="display:block;white-space:pre-wrap">
+                        {
+                            "name": Account Name,
+                            "probability": Probability%,
+                            "amount": Amount
+                        }
+                    </code>
+
+
+
+        </div>
+
+    </div>
+</body>
+
+</html>
