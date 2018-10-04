@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Single page web app using Angularjs</title>
+    <title>Salesforce API</title>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-    
+
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400" rel="stylesheet">
 
@@ -26,6 +26,9 @@
 <body>
     <div>
         <div>
+
+            <!-- Navigation Bar-->
+
             <nav class="navbar navbar-inverse" role="navigation" style="padding-left:10px;">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
@@ -38,7 +41,10 @@
         </div>
         <br />
         <div style="padding-left:50px">
+
             <h1>API</h1>
+
+            <!-- API 1 : Accounts by Distributor Type -->
 
             <h3>/data/:type</h3>
 
@@ -58,8 +64,9 @@
                             "Phone": Contact Number,
                             "Website": Distributor website
                         }
-                    </code>
+            </code>
 
+            <!-- API 2 : Opportunity by AX Customer ID -->
 
             <h3>/opportunity/:AxCustomerId</h3>
 
@@ -73,7 +80,7 @@
                             "probability": Probability%,
                             "amount": Amount
                         }
-                    </code>
+            </code>
 
 
 

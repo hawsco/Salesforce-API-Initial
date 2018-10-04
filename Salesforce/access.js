@@ -26,7 +26,7 @@ var conn = new jsforce.Connection({
     
     } else if (conn.accessToken){
 
-      console.log(conn.accessToken);
+      //console.log(conn.accessToken);
 
       callback(undefined, {   // returning NULL as error and json object with access token and Instance Url
 

@@ -14,7 +14,11 @@ var querySoql = (accountName) => {
 
                     sfConnection.conn.query(query, function (err, result) {
 
-                        if (err) { reject(err); }
+                        if (err) { 
+                            
+                            console.log(err);
+                            reject(err); 
+                        }
 
                         console.log(result)
 
@@ -36,9 +40,6 @@ var querySoql = (accountName) => {
                             dataObj
 
                         });
-
-                        // console.log("total : " + result.totalSize);
-                        // console.log("fetched : " + result.records.length);
 
                     });
 

@@ -17,6 +17,8 @@ var accounts = (accountType) => {
 
                 if (err) {
 
+                    console.log(err);
+
                     reject(err);
 
                 } else {
@@ -33,6 +35,8 @@ var accounts = (accountType) => {
                         (err, response, body) => {
 
                             if (err) {
+
+                                console.log(err);
 
                                 reject(err);
                             } else {
