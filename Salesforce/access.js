@@ -10,13 +10,14 @@ var conn = new jsforce.Connection({
       
     }
   });
- 
+
+  //callback function to get the token 
 
   var getToken = (callback)=>{
 
-    var securityToken = 'JDmYHNZGLnsTocy1MtePvltqB';
+    var securityToken = 'JDmYHNZGLnsTocy1MtePvltqB';  //received from Salesforce 
 
-  conn.login('systems@hawsco.com.iot', 'SF18r3s3t'+securityToken, function (err, userInfo) {
+  conn.login('systems@hawsco.com.iot', 'SF18r3s3t'+securityToken, function (err, userInfo) { //use security token to use SF in a browser or desktop app
     if (err) { 
       
       console.log(err);
@@ -27,7 +28,7 @@ var conn = new jsforce.Connection({
 
       console.log(conn.accessToken);
 
-      callback(undefined, {
+      callback(undefined, {   // returning NULL as error and json object with access token and Instance Url
 
         accToken: conn.accessToken,
         url: conn.instanceUrl
@@ -43,7 +44,7 @@ var conn = new jsforce.Connection({
 
 module.exports = {
 
-    getToken
+    getToken, conn
 };
 
  

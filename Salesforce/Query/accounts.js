@@ -1,16 +1,19 @@
 
 const request = require('request');
 
-var sfAccess = require('./access');
+var sfAccess = require('../access');
 
 
-var accounts = (accountType)=> { 
-    
+
+var accounts = (accountType) => {
+
+    //returns a promise with request output
+
     return new Promise(
 
-    (resolve, reject) => {
+        (resolve, reject) => {
 
-        sfAccess.getToken((err, resp) => {
+            sfAccess.getToken((err, resp) => {
 
                 if (err) {
 
@@ -18,7 +21,7 @@ var accounts = (accountType)=> {
 
                 } else {
 
-                    url = 'https://haws--iot.cs8.my.salesforce.com/services/apexrest/showAccounts/'+accountType
+                    url = 'https://haws--iot.cs8.my.salesforce.com/services/apexrest/showAccounts/' + accountType
 
                     request(url,
                         {
@@ -44,17 +47,17 @@ var accounts = (accountType)=> {
                 }
 
             }
-        )
+            )
 
-    }
-    
-);
+        }
+
+    );
 
 }
 
 
 module.exports = {
 
-accounts
+    accounts
 
 };
