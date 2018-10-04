@@ -7,8 +7,8 @@ var path = require('path');
 
 var viewPath = __dirname + '/public/';
 
-var sfData = require('./Salesforce/query/accounts');
-var sfQuery = require('./Salesforce/query/opportunity');
+var sfData = require('./Salesforce/Query/accounts');
+var sfQuery = require('./Salesforce/Query/opportunity');
 
 var app = express();
 
