@@ -59,7 +59,9 @@ var accounts = (accountType) => {
 
                                 });
 
-                                resolve(dataObj);
+                                resolve({
+                                    "data" : dataObj
+                                });
 
                             }
 

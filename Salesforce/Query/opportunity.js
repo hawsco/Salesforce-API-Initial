@@ -22,11 +22,11 @@ var querySoql = (accountName) => {
 
                         //console.log(result)
 
-                        var dataObj = [];
+                        var data = [];
 
                         result.records.forEach(element => {
 
-                            dataObj.push({
+                            data.push({
 
                                 name: element.Name,
                                 probability: element.Probability,
@@ -37,7 +37,7 @@ var querySoql = (accountName) => {
 
                         resolve({
 
-                            dataObj
+                            data
 
                         });
 
