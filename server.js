@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-
+var cors = require('cors');
 
 var favicon = require('serve-favicon');
 var path = require('path');
@@ -11,6 +11,7 @@ var sfData = require('./Salesforce/Query/accounts');
 var sfQuery = require('./Salesforce/Query/opportunity');
 
 var app = express();
+app.use(cors());
 
 const port = process.env.PORT || 3000;
 
