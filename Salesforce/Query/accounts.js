@@ -41,8 +41,25 @@ var accounts = (accountType) => {
                                 reject(err);
                             } else {
 
+                                var dataObj = [];
 
-                                resolve(body);
+                                body.forEach(element => {
+                                    
+                                    dataObj.push({
+
+                                        accountId : element.Id,
+                                        Name : element.Name,
+                                        Type : element.Type,
+                                        Phone : element.Phone,
+                                        Website : element.Website
+
+                                    })
+
+
+
+                                });
+
+                                resolve(dataObj);
 
                             }
 
