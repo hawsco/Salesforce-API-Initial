@@ -20,9 +20,12 @@ var querySoql = (accountName) => {
                             reject(err); 
                         }
 
-                        //console.log(result)
+                        console.log(result)
 
                         var data = [];
+                        var dataArray = [];
+
+                        dataArray = result.records;
 
                         result.records.forEach(element => {
 
@@ -35,11 +38,7 @@ var querySoql = (accountName) => {
 
                         });
 
-                        resolve({
-
-                            data
-
-                        });
+                        resolve(data);
 
                     });
 
